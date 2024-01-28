@@ -1,0 +1,9 @@
+{ 
+  "dependencies": { 
+    "node-sass": "^9.0.0"
+},
+"scripts" : {
+  "sass": "sass sass/main.scss:css/main.css sass/restaurants.scss:css/restaurants.css",
+  "scss": "node-sass --watch scss -o css"
+}
+}
