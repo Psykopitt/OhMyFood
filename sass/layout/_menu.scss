@@ -1,0 +1,174 @@
+@keyframes cards {
+    0%{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    30%{
+        opacity: 0.5;
+    }
+    65%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity:1;
+    }
+
+}
+.menu-card {
+    background-color: $color-bg-light;
+    border-radius: 3.125rem 3.125rem 0 0;
+    padding:2.3*$padding $padding;
+    margin-top: -50px;
+    position: relative;
+    z-index:1;
+    @include tablet{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include desktop{
+        max-width: 55%;
+    }
+
+    &_img{
+        width: 100%;
+        object-fit: cover;
+        max-height: 300px;
+    }
+    &_container{
+        display: grid;
+        
+        @include desktop{
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+        } 
+    }
+
+    &_header{
+        display: grid;
+        grid-template-columns: 1fr 3rem;
+        @include tablet{
+            width:90%;
+            margin: auto;
+        }
+        @include desktop{
+            display: flex;
+            justify-content: center;
+            gap: 25px
+        }
+    }
+
+    &_icon{
+        @include heart;
+        align-self: center;
+        justify-self:center;
+    }
+    
+    &_subcontainer{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        grid-row-gap: 1.5rem;        
+        padding-top: 2*$padding; 
+        @include tablet-Only{
+            width:80%;
+            margin:auto;
+        }
+
+        // animation cards
+        animation: cards 0.5s 1 both;
+        @for $i from 1 through 3{
+            &:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1s;
+            }
+            &:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+        }
+    } 
+    
+    &_info-container{
+        display:flex;
+        background-color: $color-bg-card;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+   
+    
+    //    animation check menu
+        &:hover .menu-card_check{
+            margin-right: 0;
+            width: 60px;
+            }
+       
+    }
+    &_title{
+        font-family: "Shrikhand", serif;
+        font-size: 28px;
+        font-weight: 400;
+    }
+    &_subtitle{
+        width: 2.375rem;
+        padding-bottom: 0.25*$padding;
+        border-bottom: solid 3px $color-tertiary;
+        text-transform: uppercase;
+    }
+    &_info{
+        padding: 12.5px 0px 12.5px 12.5px;
+        flex:1;
+        overflow: hidden;
+    }
+    &_sub-subtitle{
+        font-size: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &_txt{
+        font-size: 13px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &_price{
+        align-self: flex-end;
+        padding: 12.5px 14px
+    }
+    &_check{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        margin-right: -35px;
+        background-color: $color-tertiary;
+        border-radius: 0 1rem 1rem 0;
+        transition: all 0.2s ease-out;  
+    }
+    &_container-icon-check{
+        width:1.3rem;
+        height:1.3rem;
+        transform: rotate(-360deg);
+        transition: transform 0.25s linear;        
+    }
+    &_icon-check{
+        font-size: 1.3rem;
+        padding-right: 0;
+        color: white;
+        
+    }
+    &_btn-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.3*$padding;
+    }
+    &_btn{
+         
+         padding:0.8*$padding 2.3*$padding;
+    }
+    
+}

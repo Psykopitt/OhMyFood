@@ -1,0 +1,53 @@
+.footer {
+    background-color: $color-bg-footer;
+    color: $color-txt-white;
+    padding-top: $padding;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    @include desktop{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        padding: 30px 25px;
+
+    }
+    &_list{
+        margin-right: 0px;
+    @include desktop{
+        margin-right: 80px;
+    } 
+    }
+    &_element{   
+        font-family: "Roboto", sans-serif;
+        padding: 2px;
+        font-size: 16px;
+        @include tablet{
+            text-align: center;
+        }
+        @include desktop{
+            font-size: 12px;
+            gap: 16px;
+        }
+    }
+    &_li{
+        @include desktop{
+            margin-left: 50px;
+        }
+    }
+    &_logo{
+        font-family: "Shrikhand", serif;
+        padding-top: 2px;
+        font-size: 20px;
+        font-weight: 400;
+        @include tablet{
+            text-align: center;
+            margin-left: -1.4375rem;
+        }
+        @include desktop{
+            font-size: 14px;
+        }
+    }
+    &_link{
+        color: $color-txt-white;  
+    }  
+}

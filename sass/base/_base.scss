@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  @include desktop{
+    width: 100%;
+    margin: auto;
+  }
+}
+ ul {
+    list-style: none;
+ }
+ li {
+  @include desktop{
+    display: inline;
+  }
+ }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+ .fas{
+   padding-right: 0.2*$padding;
+ }

@@ -1,0 +1,81 @@
+// Boutons
+
+@mixin btn {
+    font-size: 1rem;
+    color: $color-txt-white;
+    padding: 0.8 * $padding;
+    border-radius: 2rem;
+    border: none;
+    background: $color-gradient;
+    box-shadow: $shadow-btn;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 200ms linear;
+    &:hover {
+        box-shadow: $shadow-btn-hover;
+        opacity: 0.85;
+    }
+}
+
+// heart
+  
+  @mixin heart {
+    position: relative;
+    justify-self: end;
+    left: 1%;
+    font-size: 26px;
+    overflow: hidden;
+    cursor: pointer;
+  
+    &:hover::after {
+      position: absolute;
+      content: "";
+      left: 1.5%;
+      color: transparent;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      transition: color 0.5s ease;
+      font-weight: bold;
+      background: radial-gradient(#9256dc, #ff7ad9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transform: scale(1.15);
+    }
+
+    &:not(:hover) {
+        transition: transform 1s, color 1s, background-image 1s;
+        background-image: radial-gradient(#9256dc 0%, #ff7ad9 0%);
+        font-weight: normal;
+        background-clip: text;
+      -webkit-background-clip: text;
+        transform: scale(1);
+      }
+  }
+
+// Breakpoints media querys
+
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+@mixin tablet-Only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+@mixin mobile-L {
+    @media screen and (min-width: map-get($breakpoints, mobile-L)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
